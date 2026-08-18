@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+
+var title = new String("Job Seeker Registration");
+document.title = title.toUpperCase();
+
+</script>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#e6e6e6;
+    margin:0;
+}
+
+.container{
+    width:900px;
+    margin:30px auto;
+    background:white;
+    display:flex;
+    border:1px solid gray;
+}
+
+
+
+
+.right{
+    width:65%;
+    padding:150px;
+}
+
+.right h2{
+    text-align:center;
+    color:white;
+    background-color: #0066cc;
+    padding: 10px;
+}
+
+table{
+    width:100%;
+}
+
+td{
+    padding:8px;
+}
+
+label{
+    font-weight:bold;
+}
+
+input,select,textarea{
+
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+
+}
+
+textarea{
+
+    height:60px;
+
+}
+
+button{
+
+    width:100%;
+    padding:10px;
+    background:#0066cc;
+    color:white;
+    border:none;
+    font-size:16px;
+    margin-top:15px;
+
+}
+
+button:hover{
+
+background:#004c99;
+
+}
+
+.error{
+
+color:red;
+
+font-size:13px;
+
+}
+
+#success{
+
+color:green;
+
+text-align:center;
+
+font-weight:bold;
+
+margin-top:15px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+
+<div class="right">
+
+<h2>Job Registration</h2>
+<br><br>
+
+<form id="jobForm">
+
+<table>
+
+<tr>
+
+<td>
+
+<label>Full Name *</label>
+
+<input type="text" id="name" placeholder="Enter your full name">
+
+<div class="error" id="nameError"></div>
+
+</td>
+
+<td>
+
+<label>Email *</label>
+
+<input type="text" id="email" placeholder="Enter your email address">
+
+<div class="error" id="emailError"></div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<label>Phone Number *</label>
+
+<input type="text" id="phone" placeholder="Enter 10-digit mobile number">
+
+<div class="error" id="phoneError"></div>
+
+</td>
+
+<td>
+
+<label>Password *</label>
+
+<input type="password" id="password" placeholder="Enter your password">
+
+<div class="error" id="passwordError"></div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<label>Confirm Password *</label>
+
+<input type="password" id="confirm" placeholder="Re-enter your password">
+
+<div class="error" id="confirmError"></div>
+
+</td>
+
+<td>
+
+<label>Date of Birth *</label>
+
+<input type="date" id="dob">
+
+<div class="error" id="dobError"></div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<label>Gender *</label>
+<select id="gender">
+<option value="">Select Gender</option>
+<option>Male</option>
+
+<option>Female</option>
+
+<option>Other</option>
+
+</select>
+
+<div class="error" id="genderError"></div>
+
+</td>
+
+<td>
+
+<label>Qualification *</label>
+
+<select id="qualification">
+
+<option value="">Select Qualification</option>
+
+<option>B.E/B.Tech</option>
+
+<option>B.Sc</option>
+
+<option>BCA</option>
+
+<option>MCA</option>
+
+<option>MBA</option>
+
+</select>
+
+<div class="error" id="qualificationError"></div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<label>College Name *</label>
+
+<input type="text" id="college" placeholder="Enter your college name">
+
+<div class="error" id="collegeError"></div>
+
+</td>
+
+<td>
+
+<label>Experience *</label>
+
+<input type="number" id="experience" placeholder="Enter years of experience">
+
+<div class="error" id="experienceError"></div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<label>Desired Job *</label>
+
+<input type="text" id="job" placeholder="Example: Software Developer">
+
+<div class="error" id="jobError"></div>
+
+</td>
+
+<td>
+
+<label>Expected Salary *</label>
+
+<input type="number" id="salary" placeholder="Enter expected salary">
+
+<div class="error" id="salaryError"></div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2">
+
+<label>Skills *</label>
+
+<input type="text" id="skills" placeholder="Example: Java, Python, HTML, CSS">
+
+<div class="error" id="skillsError"></div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<label>Preferred Location *</label>
+
+<input type="text" id="location" placeholder="Enter preferred location">
+
+<div class="error" id="locationError"></div>
+
+</td>
+
+<td>
+
+<label>LinkedIn / Portfolio</label>
+
+<input type="text" id="portfolio" placeholder="https://linkedin.com/in/yourname">
+
+<div class="error" id="portfolioError"></div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2">
+
+<label>Address *</label>
+
+<textarea id="address" placeholder="Enter your complete address"></textarea>
+
+<div class="error" id="addressError"></div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2">
+
+<label>Upload Resume (PDF/DOC/DOCX) *</label>
+
+<input type="file" id="resume">
+
+<div class="error" id="resumeError"></div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2">
+
+<input type="checkbox" id="agree" style="width:auto;">
+
+I agree to the Terms & Conditions
+
+<div class="error" id="agreeError"></div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2">
+
+<button type="submit">
+
+Register
+
+</button>
+
+</td>
+
+</tr>
+
+</table>
+
+<div id="success"></div>
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("jobForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let valid=true;
+
+document.querySelectorAll(".error").forEach(function(x){
+
+x.innerHTML="";
+
+});
+
+document.getElementById("success").innerHTML="";
+
+function check(id,msg){
+
+let value=document.getElementById(id).value.trim();
+
+if(value==""){
+
+document.getElementById(id+"Error").innerHTML=msg;
+
+valid=false;
+
+}
+
+return value;
+
+}
+
+var name=check("name","Enter Name");
+
+var email=check("email","Enter Email");
+
+var phone=check("phone","Enter Phone Number");
+
+var password=check("password","Enter Password");
+
+var confirm=check("confirm","Confirm Password");
+
+check("dob","Select Date of Birth");
+
+check("gender","Select Gender");
+
+check("qualification","Select Qualification");
+
+check("college","Enter College Name");
+
+check("experience","Enter Experience");
+
+check("job","Enter Desired Job");
+
+check("salary","Enter Expected Salary");
+
+check("skills","Enter Skills");
+
+check("location","Enter Preferred Location");
+
+check("address","Enter Address");
+
+var emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+if(email!="" && !emailPattern.test(email))
+{
+    document.getElementById("emailError").innerHTML="Invalid Email";
+    valid=false;
+}
+
+var phonePattern=/^[0-9]{10}$/;
+
+if(phone!="" && !phonePattern.test(phone))
+{
+    document.getElementById("phoneError").innerHTML="Enter 10 Digit Mobile Number";
+    valid=false;
+}
+
+if(password!="" && password.length<6)
+{
+    document.getElementById("passwordError").innerHTML="Password must contain at least 6 characters";
+    valid=false;
+}
+
+if(password!=confirm)
+{
+    document.getElementById("confirmError").innerHTML="Passwords do not match";
+    valid=false;
+}
+
+if(document.getElementById("resume").value=="")
+{
+    document.getElementById("resumeError").innerHTML="Please Upload Resume";
+    valid=false;
+}
+
+if(!document.getElementById("agree").checked)
+{
+    document.getElementById("agreeError").innerHTML="Accept Terms & Conditions";
+    valid=false;
+}
+
+if(valid)
+{
+    var msg = new String("Registration Successful");
+
+    document.getElementById("success").innerHTML =
+    msg.toUpperCase();
+
+    document.getElementById("jobForm").reset();
+}
+var file=document.getElementById("resume").value;
+
+if(file!="")
+{
+var ext=file.split('.').pop().toLowerCase();
+
+if(ext!="pdf" && ext!="doc" && ext!="docx")
+{
+document.getElementById("resumeError").innerHTML="Upload PDF or DOC File";
+valid=false;
+}
+}
+
+});
+
+</script>
+
+</body>
+</html>

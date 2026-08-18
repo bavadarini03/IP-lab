@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+
+let title = new String("Job Portal Login");
+
+document.title = title.toUpperCase();
+
+</script>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#e3f2fd;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+}
+
+.box{
+
+background:white;
+
+padding:35px;
+
+width:350px;
+
+border-radius:10px;
+
+box-shadow:0 0 10px gray;
+
+}
+
+h2{
+
+text-align:center;
+
+color:#1565c0;
+
+}
+
+input{
+
+width:100%;
+
+padding:10px;
+
+margin:10px 0;
+
+}
+
+button{
+
+width:100%;
+
+padding:12px;
+
+background:#1565c0;
+
+color:white;
+
+border:none;
+
+font-size:17px;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#0d47a1;
+
+}
+
+#error{
+
+color:red;
+
+text-align:center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Login</h2>
+
+<form onsubmit="return validate()">
+
+<input type="email" id="email" placeholder="Email">
+
+<input type="password" id="password" placeholder="Password">
+
+<p id="error"></p>
+
+<button>Login</button>
+
+</form>
+
+</div>
+
+<script>
+
+function validate(){
+
+let email=document.getElementById("email").value.trim();
+
+let password=document.getElementById("password").value;
+
+if(email=="" || password==""){
+
+document.getElementById("error").innerHTML="All fields are required";
+
+return false;
+
+}
+
+alert("Login Successful");
+
+return false;
+
+}
+
+</script>
+
+</body>
+</html>
