@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Session Tracking</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .box {
+            background-color: white;
+            width: 350px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            width: 250px;
+            margin: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 25px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Login</h1>
+
+    <form action="LoginServlet" method="post">
+
+        <input type="text"
+               name="username"
+               placeholder="Enter Username"
+               required>
+
+        <br>
+
+        <input type="password"
+               name="password"
+               placeholder="Enter Password"
+               required>
+
+        <br><br>
+
+        <input type="submit" value="Login">
+
+    </form>
+
+</div>
+
+</body>
+</html>

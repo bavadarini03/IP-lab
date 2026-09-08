@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>ONLINE EXAMINATION</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+    <div class="form-box">
+
+        <h2>Student Login</h2>
+
+        <form onsubmit="loginUser(event)">
+
+            <label>Username</label>
+            <input type="text" id="username" required>
+
+            <label>Password</label>
+            <input type="password" id="password" required>
+
+            <input type="submit" value="Login">
+
+        </form>
+
+        <p>Don't have an account?</p>
+
+        <a href="register.html">Register Here</a>
+
+    </div>
+
+    <script>
+        function loginUser(event) {
+
+            event.preventDefault();
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username != "" && password != "") {
+                alert("Login Successful");
+                window.location.href = "exam.html";
+            }
+        }
+    </script>
+
+</body>
+</html>

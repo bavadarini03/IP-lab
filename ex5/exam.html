@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Exam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>ONLINE EXAMINATION</h1>
+    </header>
+
+    <div class="exam-box">
+
+        <h2>HTML, CSS and JavaScript Quiz</h2>
+
+        <label>Student Name</label>
+        <input type="text" id="studentName" placeholder="Enter your name">
+
+        <label>Roll Number</label>
+        <input type="text" id="rollNumber" placeholder="Enter your roll number">
+
+        <hr>
+
+        <h3>1. What is HTML used for?</h3>
+
+        <input type="radio" name="q1" value="A"> A. Creating web pages<br>
+        <input type="radio" name="q1" value="B"> B. Making databases<br>
+        <input type="radio" name="q1" value="C"> C. Editing videos<br>
+        <input type="radio" name="q1" value="D"> D. Creating games
+
+
+        <h3>2. Which HTML tag is used to create a paragraph?</h3>
+
+        <input type="radio" name="q2" value="A"> A. &lt;h1&gt;<br>
+        <input type="radio" name="q2" value="B"> B. &lt;p&gt;<br>
+        <input type="radio" name="q2" value="C"> C. &lt;br&gt;<br>
+        <input type="radio" name="q2" value="D"> D. &lt;div&gt;
+
+
+        <h3>3. Which HTML tag is used to create a link?</h3>
+
+        <input type="radio" name="q3" value="A"> A. &lt;link&gt;<br>
+        <input type="radio" name="q3" value="B"> B. &lt;url&gt;<br>
+        <input type="radio" name="q3" value="C"> C. &lt;a&gt;<br>
+        <input type="radio" name="q3" value="D"> D. &lt;href&gt;
+
+
+        <h3>4. Which CSS property is used to change text color?</h3>
+
+        <input type="radio" name="q4" value="A"> A. color<br>
+        <input type="radio" name="q4" value="B"> B. text<br>
+        <input type="radio" name="q4" value="C"> C. font-color<br>
+        <input type="radio" name="q4" value="D"> D. background
+
+
+        <h3>5. Which CSS property changes the background color?</h3>
+
+        <input type="radio" name="q5" value="A"> A. color<br>
+        <input type="radio" name="q5" value="B"> B. background-color<br>
+        <input type="radio" name="q5" value="C"> C. bgcolor<br>
+        <input type="radio" name="q5" value="D"> D. background
+
+
+        <h3>6. Which CSS property changes text size?</h3>
+
+        <input type="radio" name="q6" value="A"> A. text-size<br>
+        <input type="radio" name="q6" value="B"> B. size<br>
+        <input type="radio" name="q6" value="C"> C. font-size<br>
+        <input type="radio" name="q6" value="D"> D. font
+
+
+        <h3>7. Which keyword is used to declare a variable in JavaScript?</h3>
+
+        <input type="radio" name="q7" value="A"> A. var<br>
+        <input type="radio" name="q7" value="B"> B. variable<br>
+        <input type="radio" name="q7" value="C"> C. int<br>
+        <input type="radio" name="q7" value="D"> D. string
+
+
+        <h3>8. Which JavaScript function displays a message?</h3>
+
+        <input type="radio" name="q8" value="A"> A. message()<br>
+        <input type="radio" name="q8" value="B"> B. display()<br>
+        <input type="radio" name="q8" value="C"> C. print()<br>
+        <input type="radio" name="q8" value="D"> D. alert()
+
+
+        <h3>9. Which symbol is used for a single-line comment in JavaScript?</h3>
+
+        <input type="radio" name="q9" value="A"> A. #<br>
+        <input type="radio" name="q9" value="B"> B. //<br>
+        <input type="radio" name="q9" value="C"> C. /* */<br>
+        <input type="radio" name="q9" value="D"> D. --
+
+
+        <h3>10. Which keyword is used for exception handling?</h3>
+
+        <input type="radio" name="q10" value="A"> A. error<br>
+        <input type="radio" name="q10" value="B"> B. catch<br>
+        <input type="radio" name="q10" value="C"> C. try<br>
+        <input type="radio" name="q10" value="D"> D. exception
+
+
+        <br><br>
+
+        <button onclick="checkResult()">Submit Exam</button>
+
+    </div>
+
+    <script>
+
+        function checkResult() {
+
+            var answer = ["A", "B", "C", "A", "B",
+                          "C", "A", "D", "B", "C"];
+
+            var score = 0;
+
+            for (var i = 1; i <= 10; i++) {
+
+                var selected = document.querySelector(
+                    'input[name="q' + i + '"]:checked'
+                );
+
+                if (selected != null) {
+
+                    if (selected.value == answer[i - 1]) {
+                        score++;
+                    }
+
+                }
+            }
+
+            var name = document.getElementById("studentName").value;
+
+            if (name == "") {
+                name = "Student";
+            }
+
+            localStorage.setItem("studentName", name);
+            localStorage.setItem("score", score);
+
+            window.location.href = "result.html";
+        }
+
+    </script>
+
+</body>
+</html>

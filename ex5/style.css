@@ -1,0 +1,278 @@
+body {
+    font-family: Arial;
+    background-color: #C9BEFF;
+    margin: 10;
+}
+
+header {
+    background-color: #452E5A;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+header h1 {
+    margin: 5px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    background-color: #555;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #2196f3;
+}
+
+.home {
+    width: 700px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Home Page */
+
+.welcome {
+    width: 1400px;
+    margin: 30px auto;
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.welcome h2 {
+    color: #2196f3;
+    font-size: 30px;
+}
+
+.welcome p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.home-section {
+    width: 1400px;
+    margin: 25px auto;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.home-section h2 {
+    text-align: center;
+    color: #2196f3;
+}
+
+.home-section p {
+    line-height: 1.6;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.detail-box {
+    width: 150px;
+    padding: 15px;
+    background-color: #eeeeee;
+}
+
+.detail-box h3 {
+    font-size: 28px;
+    color: #2196f3;
+    margin: 5px;
+}
+
+.subjects {
+    display: flex;
+    justify-content: space-between;
+}
+
+.subject-box {
+    width: 28%;
+    padding: 15px;
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+.subject-box:hover {
+    background-color: #d9edf7;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+}
+
+.steps div {
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+}
+
+.steps h3 {
+    color: #2196f3;
+}
+
+.instruction li {
+    margin: 10px;
+}
+
+.start-section {
+    width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    text-align: center;
+    background-color: #e8f5e9;
+    border: 1px solid #aaa;
+}
+
+.start-section h2 {
+    color: green;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.box {
+    background-color: #EBD6FB;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.button {
+    background-color: #2196f3;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #0b5fa5;
+}
+
+.form-box {
+    width: 400px;
+    margin: 40px auto;
+    background-color: #EBD6FB;
+    padding: 30px;
+    border: 1px solid #ccc;
+    text-align: center;
+
+}
+
+.form-box h2 {
+    margin-bottom: 25px;
+}
+
+.form-box label {
+    display: block;
+    text-align: left;
+    margin-top: 12px;
+}
+
+.form-box input,
+.form-box select {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.form-box input[type="submit"] {
+    width: 100%;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    margin-top: 20px;
+}
+
+.form-box input[type="submit"]:hover {
+    background-color: #0b5fa5;
+}
+
+.form-box a {
+    color: #2196f3;
+}
+
+.exam-box {
+    width: 750px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #ccc;
+}
+
+.exam-box h2 {
+    text-align: center;
+    background-color: #2196f3;
+    color: white;
+    padding: 12px;
+}
+
+.exam-box h3 {
+    margin-top: 25px;
+}
+
+.exam-box input[type="text"] {
+    width: 95%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+.exam-box input[type="radio"] {
+    margin: 8px;
+}
+
+.exam-box button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+}
+
+.exam-box button:hover {
+    background-color: darkgreen;
+}
+
+.result-box {
+    width: 500px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.result-box h2 {
+    background-color: #2196f3;
+    color: white;
+    padding: 15px;
+}
+
+.result-box h1 {
+    font-size: 50px;
+    color: green;
+}

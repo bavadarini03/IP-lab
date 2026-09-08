@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>ONLINE EXAMINATION</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+    </nav>
+
+</header>
+
+
+<div class="form-box">
+
+    <h2>Student Registration</h2>
+
+    <form onsubmit="registerUser(event)">
+
+        <!-- Student Name -->
+
+        <label>Student Name</label>
+
+        <input type="text"
+               id="name"
+               placeholder="Enter your full name">
+
+
+        <!-- Roll Number -->
+
+        <label>Roll Number</label>
+
+        <input type="text"
+               id="roll"
+               placeholder="Example: 101">
+
+
+        <!-- Email -->
+
+        <label>Email</label>
+
+        <input type="text"
+               id="email"
+               placeholder="example@gmail.com">
+
+
+        <!-- Mobile Number -->
+
+        <label>Mobile Number</label>
+
+        <input type="text"
+               id="mobile"
+               placeholder="10 digit mobile number">
+
+
+        <!-- Date of Birth -->
+
+        <label>Date of Birth</label>
+
+        <input type="date" id="dob">
+
+
+        <!-- Gender -->
+
+        <label>Gender</label>
+
+        <div class="gender">
+
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female
+
+        </div>
+
+
+        <!-- Class -->
+
+        <label>Class</label>
+
+        <select id="studentClass">
+
+            <option value="">Select Class</option>
+
+            <option value="BCA">BE</option>
+
+            <option value="B.Sc">B.Sc</option>
+
+            <option value="B.Tech">B.Tech</option>
+
+            <option value="MCA">MCA</option>
+
+        </select>
+
+
+        <!-- Username -->
+
+        <label>Username</label>
+
+        <input type="text"
+               id="username"
+               placeholder="Enter username">
+
+
+        <!-- Password -->
+
+        <label>Password</label>
+
+        <input type="password"
+               id="password"
+               placeholder="Enter password">
+
+
+        <!-- Confirm Password -->
+
+        <label>Confirm Password</label>
+
+        <input type="password"
+               id="confirmPassword"
+               placeholder="Confirm password">
+
+
+        <!-- Address -->
+
+        <label>Address</label>
+
+        <textarea id="address"
+                  placeholder="Enter your address"></textarea>
+
+
+        <!-- Terms -->
+
+        <div class="terms">
+
+            <input type="checkbox" id="terms"><br>I agree to the terms and conditions.
+
+        </div>
+
+
+        <!-- Error Message -->
+
+        <p id="error" class="error"></p>
+
+
+        <input type="submit" value="Register">
+
+    </form>
+
+
+    <p>Already have an account?</p>
+
+    <a href="login.html">Login Here</a>
+
+</div>
+
+
+<script>
+
+function registerUser(event) {
+
+    event.preventDefault();
+
+
+    var name =
+        document.getElementById("name").value.trim();
+
+    var roll =
+        document.getElementById("roll").value.trim();
+
+    var email =
+        document.getElementById("email").value.trim();
+
+    var mobile =
+        document.getElementById("mobile").value.trim();
+
+    var dob =
+        document.getElementById("dob").value;
+
+    var username =
+        document.getElementById("username").value.trim();
+
+    var password =
+        document.getElementById("password").value;
+
+    var confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+    var studentClass =
+        document.getElementById("studentClass").value;
+
+    var address =
+        document.getElementById("address").value.trim();
+
+    var terms =
+        document.getElementById("terms").checked;
+
+    var error =
+        document.getElementById("error");
+
+
+    error.innerHTML = "";
+
+
+
+
+    if (name == "") {
+
+        error.innerHTML =
+            "Please enter your name";
+
+        return;
+    }
+
+    if (!/^[A-Za-z ]+$/.test(name)) {
+
+        error.innerHTML =
+            "Name should contain only letters";
+
+        return;
+    }
+
+
+    /* Roll Number Validation */
+
+    if (roll == "") {
+
+        error.innerHTML =
+            "Please enter roll number";
+
+        return;
+    }
+
+    if (!/^[0-9]+$/.test(roll)) {
+
+        error.innerHTML =
+            "Roll number should contain only numbers";
+
+        return;
+    }
+
+
+    /* Email Validation */
+
+    if (email == "") {
+
+        error.innerHTML =
+            "Please enter email";
+
+        return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+
+        error.innerHTML =
+            "Please enter a valid email";
+
+        return;
+    }
+
+
+    /* Mobile Validation */
+
+    if (mobile == "") {
+
+        error.innerHTML =
+            "Please enter mobile number";
+
+        return;
+    }
+
+    if (!/^[0-9]{10}$/.test(mobile)) {
+
+        error.innerHTML =
+            "Mobile number must contain 10 digits";
+
+        return;
+    }
+
+
+
+    if (dob == "") {
+
+        error.innerHTML =
+            "Please select your date of birth";
+
+        return;
+    }
+
+
+
+
+    var gender =
+        document.querySelector(
+            'input[name="gender"]:checked'
+        );
+
+    if (gender == null) {
+
+        error.innerHTML =
+            "Please select your gender";
+
+        return;
+    }
+
+
+    /* Class Validation */
+
+    if (studentClass == "") {
+
+        error.innerHTML =
+            "Please select your class";
+
+        return;
+    }
+
+
+    /* Username Validation */
+
+    if (username == "") {
+
+        error.innerHTML =
+            "Please enter username";
+
+        return;
+    }
+
+    if (username.length < 4) {
+
+        error.innerHTML =
+            "Username must contain at least 4 characters";
+
+        return;
+    }
+
+    if (!/^[A-Za-z0-9]+$/.test(username)) {
+
+        error.innerHTML =
+            "Username should contain only letters and numbers";
+
+        return;
+    }
+
+
+    /* Password Validation */
+
+    if (password == "") {
+
+        error.innerHTML =
+            "Please enter password";
+
+        return;
+    }
+
+    if (password.length < 8) {
+
+        error.innerHTML =
+            "Password must contain at least 8 characters";
+
+        return;
+    }
+
+    if (!/[A-Z]/.test(password)) {
+
+        error.innerHTML =
+            "Password must contain one uppercase letter";
+
+        return;
+    }
+
+    if (!/[0-9]/.test(password)) {
+
+        error.innerHTML =
+            "Password must contain one number";
+
+        return;
+    }
+
+    if (!/[!@#$%^&*]/.test(password)) {
+
+        error.innerHTML =
+            "Password must contain one special character";
+
+        return;
+    }
+
+    if (confirmPassword == "") {
+
+        error.innerHTML =
+            "Please confirm your password";
+
+        return;
+    }
+
+    if (password != confirmPassword) {
+
+        error.innerHTML =
+            "Passwords do not match";
+
+        return;
+    }
+
+    if (address == "") {
+
+        error.innerHTML =
+            "Please enter your address";
+
+        return;
+    }
+
+    if (address.length < 10) {
+
+        error.innerHTML =
+            "Address must contain at least 10 characters";
+
+        return;
+    }
+
+
+
+    if (!terms) {
+
+        error.innerHTML =
+            "Please accept the terms and conditions";
+
+        return;
+    }
+
+
+
+    alert("Registration Successful!");
+
+    window.location.href = "login.html";
+
+}
+
+</script>
+
+</body>
+</html>
+
